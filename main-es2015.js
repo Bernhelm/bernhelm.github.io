@@ -1279,7 +1279,6 @@ class UserService {
     constructor(StorageService) {
         this.StorageService = StorageService;
         this.current = null;
-        this.userList = this.StorageService.getData();
     }
     setCurrent(current) {
         this.current = current;
@@ -1288,7 +1287,7 @@ class UserService {
         return this.current;
     }
     get users() {
-        return this.userList;
+        return this.StorageService.getData();
     }
 }
 UserService.ɵfac = function UserService_Factory(t) { return new (t || UserService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_storage_service__WEBPACK_IMPORTED_MODULE_1__["StorageService"])); };

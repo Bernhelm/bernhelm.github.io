@@ -2257,7 +2257,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.StorageService = StorageService;
         this.current = null;
-        this.userList = this.StorageService.getData();
       }
 
       _createClass(UserService, [{
@@ -2273,7 +2272,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "users",
         get: function get() {
-          return this.userList;
+          return this.StorageService.getData();
         }
       }]);
 
